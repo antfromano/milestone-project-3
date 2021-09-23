@@ -38,10 +38,11 @@ def search():
 def library():
     return render_template("library.html")
 
+
 @app.route("/add_slice")
 def add_slice():
     return render_template("add_slice.html")
-    
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
