@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_complete_slices")
 def get_complete_slices():
-    complete_slices = mongo.db.complete_slices.find()
+    complete_slices = list(mongo.db.complete_slices.find())
     return render_template("library.html", complete_slices=complete_slices)
 
 
@@ -28,13 +28,19 @@ def get_complete_slices():
 def input(): 
     return render_template("input.html")
 
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     return render_template("search.html")
 
+
 @app.route("/library", methods=["GET", "POST"])
 def library():
     return render_template("library.html")
+
+@app.route("/add_slice")
+def add_slice():
+    return render_template("add_slice.html")
     
 
 if __name__ == "__main__":
