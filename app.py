@@ -24,6 +24,11 @@ def get_complete_slices():
     return render_template("library.html", complete_slices=complete_slices)
 
 
+@app.route("/input", methods=["GET", "POST"])
+def input():
+    return render_template("input.html")
+    
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port=int(os.environ.get("PORT")),

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="row">
+        <form class="col s12 m8 offset-m2">
+            <div class="card grey darken-2">
+                <div class="card-content white-text">
+                    <span class="center-align card-title">Input Special Slice</span>
+                <!--  style  -->
+                <div class="row">
+                    <div class="input-field col s10">
+                      <input id="complete_slices.style" type="text" class="validate">
+                      <label for="complete_slices.style">Style</label>
+                    </div>
+                </div>
+                <!--  sauce  -->
+                <div class="row">
+                    <div class="input-field col s10">
+                      <input id="complete_slices.sauce" type="text" class="validate">
+                      <label for="complete_slices.sauce">Sauce</label>
+                    </div>
+                </div>
+                <!--  cheese  -->
+                <div class="row">
+                    <div class="input-field col s10">
+                      <input id="complete_slices.cheese" type="text" class="validate">
+                      <label for="complete_slices.cheese">Cheese</label>
+                    </div>
+                </div>
+                <!--  topping  -->
+                <div class="row">
+                    <div class="input-field col s10">
+                      <input id="complete_slices.topping" type="text" class="validate">
+                      <label for="complete_slices.topping">Topping</label>
+                    </div>
+                </div>
+                <!--  name_of_restaurant  -->
+                <div class="row">
+                    <div class="input-field col s10">
+                      <input id="complete_slices.name_of_restaurant" type="text" class="validate">
+                      <label for="complete_slices.name_of_restaurant">Name of Restaurant</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit" class="col s12 btn-large darken-4 text-shadow">
+                        Submit</button>
+                </div>
+            </div>
+        </form>
+        </div>
+
+  {% endblock %}
