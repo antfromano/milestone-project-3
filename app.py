@@ -25,7 +25,7 @@ def get_complete_slices():
 
 
 @app.route("/input", methods=["GET", "POST"])
-def input():
+def input(): 
     return render_template("input.html")
     
 
