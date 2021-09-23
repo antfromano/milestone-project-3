@@ -31,6 +31,10 @@ def input():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     return render_template("search.html")
+
+@app.route("/library", methods=["GET", "POST"])
+def library():
+    return render_template("library.html")
     
 
 if __name__ == "__main__":
