@@ -39,9 +39,21 @@ def library():
     return render_template("library.html")
 
 
-@app.route("/add_slice")
+@app.route("/add_slice", methods=["GET", "POST"])
 def add_slice():
-    return render_template("add_slice.html")
+    if request.method == "POST":
+        slice = {
+            "style": request.form.get("style"),
+            "sauce": request.form.get("sauce"),
+            "topping": request.form.get("topping"),
+            "name_of_restaurant": request.form.get("name_of_restaurant"),
+        }
+        mongo.db.slices.insert_one(slice)
+        flash("Slice made")
+        return redirect(url_for("get_complete_slices"))
+
+    styles = mongo.db.styles.find().sort("style_name", 1)
+    return render_template("add_slice.html", styles=styles)
 
 
 if __name__ == "__main__":
