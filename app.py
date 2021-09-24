@@ -48,7 +48,7 @@ def add_slice():
             "topping": request.form.get("topping"),
             "restaurant": request.form.get("restaurant"),
         }
-        mongo.db.slices.insert_one(slice)
+        mongo.db.complete_slices.insert_one(slice)
         flash("Slice made")
         return redirect(url_for("get_complete_slices"))
 
