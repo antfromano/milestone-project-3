@@ -24,11 +24,6 @@ def get_complete_slices():
     return render_template("library.html", complete_slices=complete_slices)
 
 
-@app.route("/search", methods=["GET", "POST"])
-def search():
-    return render_template("search.html")
-
-
 @app.route("/library", methods=["GET", "POST"])
 def library():
     return render_template("library.html")
@@ -55,6 +50,21 @@ def delete_slice(complete_slices_id):
     mongo.db.complete_slices.remove({"_id": ObjectId(complete_slices_id)})
     flash("Slice deleted")
     return redirect(url_for("get_complete_slices"))
+
+
+@app.route("/update_slice/<complete_slices_id>", methods=["GET", "POST"])
+def update_slice(complete_slices_id):
+        if request.method == "POST":
+            submit = {
+                "complete_slices": request.form.get("complete_slices")
+            }
+            mongo.db.complete_slices.update({"_id": ObjectId(complete_slices_id)}, submit)
+            flash("Slice updated")
+            return redirect(url_for("get_complete_slices"))
+
+        complete_slices = mongo.db.complete_slices.find_one({"_id": ObjectId(complete_slices_id)})
+        return render_template("update_slice.html", complete_slices=complete_slices)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
