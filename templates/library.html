@@ -1,29 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 
-<ul>
-  {% for complete_slices in complete_slices %}
-  <li>
-    <div>
-
-      <div class="row">
-        <div class="col s12 m6">
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <span class="card-title">{{ complete_slices.restaurant }} Restaurant</span>
+  <div class="row">
+    {% for complete_slices in complete_slices %}
+      <div class="col s10 m4">
+        <div class="card blue lighten-2-2">
+          <div class="card-content white-text">
+            <span class="card-title">{{ complete_slices.restaurant }} Restaurant</span>
               <p>{{ complete_slices.style }} crust</p>
               <p>{{ complete_slices.sauce }} sauce</p>
               <p>{{ complete_slices.cheese }} cheese</p>
               <p>{{ complete_slices.topping }} topping</p>
-            </div>
-            <div class="card-action">         
-                <a href="" class="btn-small blue accent-4">Update</a>
-                <a href="{{ url_for('delete_slice', complete_slices_id=complete_slices._id) }}" class="btn-small red lighten-1">Delete</a>
-            </div>
+          </div>
+          <div class="card-action">         
+            <a href="" class="btn-small blue accent-4">Update</a>
+            <a href="{{ url_for('delete_slice', complete_slices_id=complete_slices._id) }}" class="btn-small red lighten-1">Delete</a>
           </div>
         </div>
       </div>
-  {% endfor %}
-</ul>
+      {% endfor %}
+    </div>
 
 {% endblock %}

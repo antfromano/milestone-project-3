@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_complete_slices")
 def get_complete_slices():
-    complete_slices = list(mongo.db.complete_slices.find())
+    complete_slices = list(mongo.db.complete_slices.find().sort("restaurant", 1))
     return render_template("library.html", complete_slices=complete_slices)
 
 
@@ -55,7 +55,6 @@ def delete_slice(complete_slices_id):
     mongo.db.complete_slices.remove({"_id": ObjectId(complete_slices_id)})
     flash("Slice deleted")
     return redirect(url_for("get_complete_slices"))
-
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

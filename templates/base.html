@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
-    <title>Special Slice</title>
+    <title>Special Slice | a place to share your favorite pizza</title>
 </head>
 <body>
 
@@ -18,7 +18,7 @@
         <!-- top navbar -->
             <nav class="nav-extended center-align text-shadow grey darken-2">
                 <div class="nav-wrapper">
-                    <a href="{{ url_for('get_complete_slices') }}" class="brand-logo">Special Slice</a>
+                    <a href="{{ url_for('get_complete_slices') }}">Special Slice - a place to share your favorite pizza</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_complete_slices') }}">Home</a></li>             
