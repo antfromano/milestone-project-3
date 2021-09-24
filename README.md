@@ -116,6 +116,8 @@ Lighthouse was also used to validate the project for performance, accessability,
 
 ### Known Bugs
 
+-   Special Slice updates and inputs are sometimes not immediately displayed.
+-   Extra data is sent to MongoDB sometimes but doesn't seem to affect program.
 -   On some mobile devices the headings aren't fully centered.
 
 ## Deployment
