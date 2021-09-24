@@ -50,6 +50,12 @@ def add_slice():
     styles = mongo.db.styles.find().sort("style_name", 1)
     return render_template("add_slice.html", styles=styles)
 
+@app.route("/delete_slice/<complete_slices_id>")
+def delete_slice(complete_slices_id):
+    mongo.db.complete_slices.remove({"_id": ObjectId(complete_slices_id)})
+    flash("Slice deleted")
+    return redirect(url_for("get_complete_slices"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
