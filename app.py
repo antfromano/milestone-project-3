@@ -46,7 +46,7 @@ def add_slice():
             "style": request.form.get("style"),
             "sauce": request.form.get("sauce"),
             "topping": request.form.get("topping"),
-            "name_of_restaurant": request.form.get("name_of_restaurant"),
+            "restaurant": request.form.get("restaurant"),
         }
         mongo.db.slices.insert_one(slice)
         flash("Slice made")
