@@ -54,10 +54,12 @@ def delete_slice(complete_slices_id):
 
 @app.route("/update_slice/<complete_slices_id>", methods=["GET", "POST"])
 def update_slice(complete_slices_id):
-        if request.method == "POST":
+        if request.method == "POST": 
+            print("Hello")
             submit = {"$set":{
                 "complete_slices": request.form.get("complete_slices")
             }}
+            print("Hello")
             mongo.db.complete_slices.update({"_id": ObjectId(complete_slices_id)}, submit)
             flash("Slice updated")
             return redirect(url_for("get_complete_slices"))
