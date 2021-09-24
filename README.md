@@ -183,4 +183,4 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 -   Tutor support at Code Institute for their support.
 
--   I received inspiration for this project from Amyh97(https://github.com/Amyh97)
+-   I received inspiration for this project from [Amyh97](https://github.com/Amyh97)
