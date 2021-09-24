@@ -22,7 +22,6 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_complete_slices') }}">Home</a></li>             
-                    <li><a href="{{ url_for('input') }}">Input</a></li>
                     <li><a href="{{ url_for('add_slice') }}">Add Slice</a></li>
                     <li><a href="{{ url_for('search') }}">Search</a></li>
                     <li><a href="#">Update</a></li>
@@ -34,7 +33,6 @@
                 <ul class="sidenav" id="mobile-demo">
                     <li><h4 class="center-align text-darken 2"></h4></li>
                     <li><a href="{{ url_for('get_complete_slices') }}">Home</a></li>                 
-                    <li><a href="{{ url_for('input') }}">Input</a></li>
                     <li><a href="{{ url_for('add_slice') }}">Add Slice</a></li>
                     <li><a href="{{ url_for('search') }}">Search</a></li>
                     <li><a href="#">Update</a></li>
@@ -47,7 +45,7 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row flashes">
-                        <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
+                        <h4 class="yellow darken-1 center-align">{{ message }}</h4>
                     </div>
                 {% endfor %}
             {% endif %}

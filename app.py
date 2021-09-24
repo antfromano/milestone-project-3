@@ -24,11 +24,6 @@ def get_complete_slices():
     return render_template("library.html", complete_slices=complete_slices)
 
 
-@app.route("/input", methods=["GET", "POST"])
-def input(): 
-    return render_template("input.html")
-
-
 @app.route("/search", methods=["GET", "POST"])
 def search():
     return render_template("search.html")
