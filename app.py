@@ -29,12 +29,13 @@ def library():
     return render_template("library.html")
 
 
-@app.route("/add_slice", methods=["GET", "POST"])
+@app.route("/add_slice/<complete_slices_id>", methods=["GET", "POST"])
 def add_slice():
     if request.method == "POST":
         slice = {
             "style": request.form.get("style"),
             "sauce": request.form.get("sauce"),
+            "cheese": request.form.get("cheese"),
             "topping": request.form.get("topping"),
             "restaurant": request.form.get("restaurant"),
         }
@@ -54,13 +55,18 @@ def delete_slice(complete_slices_id):
 
 @app.route("/update_slice/<complete_slices_id>", methods=["GET", "POST"])
 def update_slice(complete_slices_id):
-        if request.method == "POST": 
-            print("Hello")
+        if request.method == "POST":
+            print("ADDED BY JO: CHEESE INPUT IN FORM: ", request.form.get("cheese"))
             submit = {"$set":{
-                "complete_slices": request.form.get("complete_slices")
+                "style": request.form.get("style"),
+                "sauce": request.form.get("sauce"),
+                "cheese": request.form.get("cheese"),
+                "topping": request.form.get("topping"),
+                "restaurant": request.form.get("restaurant"),
             }}
-            print("Hello")
             mongo.db.complete_slices.update({"_id": ObjectId(complete_slices_id)}, submit)
+
+            
             flash("Slice updated")
             return redirect(url_for("get_complete_slices"))
 
