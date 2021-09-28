@@ -46,6 +46,7 @@ def add_slice():
     styles = mongo.db.styles.find().sort("style_name", 1)
     return render_template("add_slice.html", styles=styles)
 
+
 @app.route("/delete_slice/<complete_slices_id>")
 def delete_slice(complete_slices_id):
     mongo.db.complete_slices.remove({"_id": ObjectId(complete_slices_id)})
@@ -55,20 +56,19 @@ def delete_slice(complete_slices_id):
 
 @app.route("/update_slice/<complete_slices_id>", methods=["GET", "POST"])
 def update_slice(complete_slices_id):
-        if request.method == "POST":
-            print("ADDED BY JO: CHEESE INPUT IN FORM: ", request.form.get("cheese"))
-            submit = {"$set":{
-                "style": request.form.get("style"),
-                "sauce": request.form.get("sauce"),
-                "cheese": request.form.get("cheese"),
-                "topping": request.form.get("topping"),
-                "restaurant": request.form.get("restaurant"),
+    if request.method == "POST":
+        print("ADDED BY JO: CHEESE INPUT IN FORM: ", request.form.get("cheese"))
+        submit = {"$set": {
+            "style": request.form.get("style"),
+            "sauce": request.form.get("sauce"),
+            "cheese": request.form.get("cheese"),
+            "topping": request.form.get("topping"),
+            "restaurant": request.form.get("restaurant"),
             }}
-            mongo.db.complete_slices.update({"_id": ObjectId(complete_slices_id)}, submit)
+        mongo.db.complete_slices.update({"_id": ObjectId(complete_slices_id)}, submit)
 
-            
-            flash("Slice updated")
-            return redirect(url_for("get_complete_slices"))
+        flash("Slice updated")
+        return redirect(url_for("get_complete_slices"))
 
         complete_slices = mongo.db.complete_slices.find_one({"_id": ObjectId(complete_slices_id)})
         return render_template("update_slice.html", complete_slices=complete_slices)
@@ -76,5 +76,6 @@ def update_slice(complete_slices_id):
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
-    port=int(os.environ.get("PORT")),
-    debug=False)
+            port=int(os.environ.get("PORT")),
+            debug=True)
+
