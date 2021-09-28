@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_complete_slices")
 def get_complete_slices():
-    complete_slices = list(mongo.db.complete_slices.find().sort("restaurant", 1))
+    complete_slices = list(mongo.db.complete_slices.find().sort("restaurant", 0))
     return render_template("library.html", complete_slices=complete_slices)
 
 
@@ -29,7 +29,7 @@ def library():
     return render_template("library.html")
 
 
-@app.route("/add_slice/<complete_slices_id>", methods=["GET", "POST"])
+@app.route("/add_slice", methods=["GET", "POST"])
 def add_slice():
     if request.method == "POST":
         slice = {
