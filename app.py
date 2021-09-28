@@ -70,12 +70,11 @@ def update_slice(complete_slices_id):
         flash("Slice updated")
         return redirect(url_for("get_complete_slices"))
 
-        complete_slices = mongo.db.complete_slices.find_one({"_id": ObjectId(complete_slices_id)})
-        return render_template("update_slice.html", complete_slices=complete_slices)
+    complete_slices = mongo.db.complete_slices.find_one({"_id": ObjectId(complete_slices_id)})
+    return render_template("update_slice.html", complete_slices=complete_slices)
 
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-
