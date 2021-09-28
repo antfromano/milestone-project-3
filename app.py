@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_complete_slices")
 def get_complete_slices():
-    complete_slices = list(mongo.db.complete_slices.find().sort("restaurant", 0))
+    complete_slices = list(mongo.db.complete_slices.find().sort("restaurant", 1))
     return render_template("library.html", complete_slices=complete_slices)
 
 
