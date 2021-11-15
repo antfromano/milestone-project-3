@@ -49,7 +49,7 @@ Designed to provide a simple experience for people to share their favorite pizza
 
 ### Languages
 
--   [Python](https://en.wikipedia.org/wiki/Python_(programming_language)
+-   [Python](https://en.wikipedia.org/wiki/Python)
 -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
 -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 -   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
