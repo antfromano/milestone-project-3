@@ -2,7 +2,7 @@
 
 [View the live project here.](https://special-slice.herokuapp.com/get_complete_slices)
 
-An interactive matching game site designed using Python, HTML, CSS, JavaScript, Materialize, MongoDB and Heroku to highlight skills learned during Full Stack Software Development coursework.
+A pizza sharing website designed using Python, HTML, CSS, JavaScript, Materialize, MongoDB and Heroku to highlight skills learned during Full Stack Software Development coursework.
 
 <h2 align="center"><img src="img/specialslicemultidevicewebsitemockup.jpg"></h2>
 
