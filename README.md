@@ -1,6 +1,6 @@
 <h1 align="center">Milestone Project 3 - Special Slice - Ant Romano</h1>
 
-live project currently under construction due to changes in free databases and hosting offered during coursework.
+(live project currently under construction due to changes in free databases and hosting offered during coursework.)
 
 A pizza sharing website designed using Python, HTML, CSS, JavaScript, Materialize, MongoDB and Heroku to highlight skills learned during Full Stack Software Development coursework.
 
